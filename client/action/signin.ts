@@ -9,9 +9,11 @@ export const signinAction = async (data: any) => {
       "/api/v1/auth/signin",
       data
     );
+    console.log(res.data);
     return res.data;
   } catch (error: any) {
     if (isAxiosError(error)) {
+      console.log(error);
       return { message: error.response?.data.message };
     }
     console.log(error);

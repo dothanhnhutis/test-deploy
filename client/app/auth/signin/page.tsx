@@ -16,7 +16,7 @@ const SignInPage = () => {
   const [isPending, startTransistion] = React.useTransition();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    startTransistion(async () => {
+    startTransistion(() => {
       signinAction(form)
         .then((data) => {
           console.log(data.message);
